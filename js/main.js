@@ -31,22 +31,23 @@ let students = [
  {
     name : 'alfredo2',
     lastname : 'fasullo2',
-    eta : '25+2'
+    age : '25+2'
 },
  {
     name : 'alfredo3',
     lastname : 'fasullo3',
-    eta : '25+3'
+    age : '25+3'
 },
  {
     name : 'alfredo4',
     lastname : 'fasullo4',
-    eta : '25+4'
+    age : '25+4'
 },
 ]
 // Ciclare su tutti gli studenti e stampare per ognuno di essi, nome e cognome.
 var studentName = document.getElementById('nome');
 var studentLastname = document.getElementById('cognome');
+var studentAge = document.getElementById('eta');
 var nameVariable;
 var lastnameVariable;
 for (i = 0; i<students.length; i++){
@@ -58,5 +59,33 @@ for (i = 0; i<students.length; i++){
     studentLastname.appendChild(lastnameVariable);
     studentLastname.appendChild(document.createElement('br'));
     console.log(studentLastname)
+    
 }
 // Dare la possibilità all’utente, attraverso 3 prompt(), di aggiungere un nuovo oggetto studente inserendo nell’ordine: nome, cognome e età.
+let userName = prompt('per favore inserisca il suo nome');
+let userLastame = prompt('per favore inserisca il suo cognome');
+let userAge = prompt('per favore inserisca la sua età');
+
+let supportObject = {
+    name : userName,
+    lastname : userLastame,
+    age : userAge
+};
+students.push(supportObject);
+var userStudentName = document.getElementById('nomeUtente');
+var userStudentLastname = document.getElementById('cognomeUtente');
+var userStudentAge = document.getElementById('etaUtente');
+for (i = (students.length - 1); i<students.length; i++){
+    nameVariable = document.createTextNode(students[i]['name'])
+    userStudentName.appendChild(nameVariable);
+    userStudentName.appendChild(document.createElement('br'));
+    console.log(studentName)
+    lastnameVariable = document.createTextNode(students[i]['lastname'])
+    userStudentLastname.appendChild(lastnameVariable);
+    userStudentLastname.appendChild(document.createElement('br'));
+    console.log(studentLastname)
+    ageVariable = document.createTextNode(students[i]['age'])
+    userStudentAge.appendChild(ageVariable);
+    userStudentAge.appendChild(document.createElement('br'));
+    console.log(studentAge)
+}

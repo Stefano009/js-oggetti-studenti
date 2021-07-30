@@ -10,8 +10,17 @@ body {
     display: flex;
 }
 #nome,
-#cognome {
+#cognome,
+#eta {
     padding-top: 5rem;
     color: red;
     width: 20%;
+}
+#nomeUtente,
+#cognomeUtente,
+#etaUtente {
+    padding-top: 5rem;
+    color: green;
+    width: 20%;
+    text-transform: capitalize;
 }
